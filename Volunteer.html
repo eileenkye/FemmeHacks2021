@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Volunteer</title>
+<head>
+ <title>Volunteer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Home.css">
@@ -11,7 +12,18 @@ body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
-<body class="background-gray">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  //alert("test");
+  $.ajax("https://docs.google.com/spreadsheets/d/e/2PACX-1vQlS-BzTPmnENlGdlcB-mU790KcP8kPB-c0efObi6diEPj04IvGApPd1QgStu4XlwbTBtoqgNKLwveA/pub?output=csv").done(function(result){
+    alert(result);
+    alert("hello")
+  });
+</script>
+
+</head>
+<body class="background-gray" onload="listOpportunities()">
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar background-blue text-navy w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
@@ -20,12 +32,12 @@ body {font-size:16px;}
     <h3 class="w3-padding-64"><b>Community<br>Service</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Home</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button hover-white">About</a>
-    <a href="Volunteer.html" onclick="w3_close()" class="w3-bar-item w3-button text-navy hover-white">Volunteer</a> 
+    <a href="Home.html" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Home</a> 
+    <a href="Home.html#about" onclick="w3_close()" class="w3-bar-item w3-button hover-white">About</a>
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button text-navy hover-white">Volunteer</a> 
     <a href="Map.html" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Map</a> 
     <a href="Calendar.html" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Calendar</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Contact</a> 
+    <a href="Home.html#contact" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Contact</a> 
     <a href="LogIn.html" onclick="w3_close()" class="w3-bar-item w3-button hover-white">Sign Up/Log In</a>
   </div>
 </nav>
@@ -45,18 +57,36 @@ body {font-size:16px;}
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
     <h1 class="w3-jumbo text-navy"><b>Volunteer Opportunities!</b></h1>
-    
   </div>
+  <!--<div id="csv-display">
+
+  </div> -->
+
+<script src="d3.min.js?v=3.2.8"></script>
+
+<script type="text/javascript"charset="utf-8">
+    d3.text("volunteerOpportunities.csv", function(data) {
+        var parsedCSV = d3.csv.parseRows(data);
+
+        var container = d3.select("body")
+            .append("table")
+
+            .selectAll("tr")
+                .data(parsedCSV).enter()
+                .append("tr")
+
+            .selectAll("td")
+                .data(function(d) { return d; }).enter()
+                .append("td")
+                .text(function(d) { return d; });
+    });
+</script>
 
 
 <!-- End page content -->
 </div>
 
-<!-- W3.CSS Container -->
 <div class="w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right text-navy">Volunteer Today </p></div>
-
-<script src="Home.js">
-</script>
 
 </body>
 </html>

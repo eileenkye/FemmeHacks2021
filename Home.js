@@ -18,7 +18,6 @@ function onClick(element) {
 }
 
 // Scrit to submit message
-
 function sendEmail() {
 	var ourEmail = "22yee@brearley.org";				
 	var yourEmail = document.getElementById("email").value;
