@@ -28,7 +28,7 @@ footer {
 <script src="Profile.js"></script>
 </head>
 
-<body class="background-gray">
+<body class="background-gray" onload="signIn()">
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar background-blue text-navy w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
@@ -41,7 +41,6 @@ footer {
     <a href="Home.html#about" onclick="w3_close()" class="w3-bar-item w3-button hover-white" style="text-decoration:none">About</a>
     <a href="Volunteer.html" onclick="w3_close()" class="w3-bar-item w3-button text-navy hover-white" style="text-decoration:none">Volunteer</a> 
     <a href="Map.html" onclick="w3_close()" class="w3-bar-item w3-button hover-white" style="text-decoration:none">Map</a> 
-    <a href="Calendar.html" onclick="w3_close()" class="w3-bar-item w3-button hover-white" style="text-decoration:none">Calendar</a> 
     <a href="Home.html#contact" onclick="w3_close()" class="w3-bar-item w3-button hover-white" style="text-decoration:none">Contact</a> 
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button hover-white" style="text-decoration:none">Profile</a>
   </div>
@@ -64,11 +63,14 @@ footer {
     <h1 class="w3-jumbo text-navy"><b>Profile!</b></h1>
   </div>
 
-<div class="container text-center">    
-  <div class="row">
+<div class="container text-center">
     <div class="col-sm-3 well">
       <div class="well">
-        <p>John Doe</p>
+        <p>Information</p>
+        <p id="name">Name: John Doe</p>
+        <p id="email">Email: </p>
+      </div>
+      <div class="well">
         <p id="goal">Goal: 0 hours</p>
         <button type="button" class="btn btn-default btn-sm" onclick="setGoal()">Set New Goal</button>
         <br><br>
@@ -76,17 +78,7 @@ footer {
         <button type="button" class="btn btn-default btn-sm" onclick="addHours()">Add Hours</button>
         <button type="button" class="btn btn-default btn-sm" onclick="resetHours()">Reset Hours</button>
       </div>
- 
-      <div class="well">
-        <p><a href="#">Community Service Hours</a></p>
-        <p>
-          <span class="label label-default">In school</span>
-      <span class="label label-default">Out of school</span>
-      <span class="label label-default">total credit</span>
-        </p>
-      </div>
     </div>
-
     <div class="col-sm-7">
       <div class="row">
         <div class="col-sm-12">
@@ -100,7 +92,6 @@ footer {
           </div>
         </div>
       </div>
-      
       <div class = "row">
         <div class="col-sm-12">
           <div class="well">

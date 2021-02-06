@@ -18,3 +18,10 @@ function addHours() {
 function resetHours() {
 	document.getElementById("completed").innerHTML = "Hours Completed: 0 hours";
 }
+
+function signIn() {
+	var userName = prompt("Email:");
+	var password = prompt("Password:");
+	var message = "Email: " + userName;
+	document.getElementById("email").innerHTML = message;
+}
