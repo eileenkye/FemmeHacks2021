@@ -64,34 +64,24 @@ footer {
   </div>
 
 <div class="container text-center">
-    <div class="col-sm-3 well">
+    <div class="col-sm-5 well background-blue">
       <div class="well">
-        <p>Information</p>
+        <h4 class = "text-navy"><b>Information</b></h4>
         <p id="name">Name: John Doe</p>
         <p id="email">Email: </p>
+        <p id="school">School: </p>
+        <button type="button" class="btn btn-default btn-sm background-blue" onclick="setSchool()">Enter School</button>
       </div>
       <div class="well">
         <p id="goal">Goal: 0 hours</p>
-        <button type="button" class="btn btn-default btn-sm" onclick="setGoal()">Set New Goal</button>
+        <button type="button" class="btn btn-default btn-sm background-blue" onclick="setGoal()">Set New Goal</button>
         <br><br>
         <p id="completed">Hours Completed: 0 hours</p>
-        <button type="button" class="btn btn-default btn-sm" onclick="addHours()">Add Hours</button>
-        <button type="button" class="btn btn-default btn-sm" onclick="resetHours()">Reset Hours</button>
+        <button type="button" class="btn btn-default btn-sm background-blue" onclick="addHours()">Add Hours</button>
+        <button type="button" class="btn btn-default btn-sm background-blue" onclick="resetHours()">Reset Hours</button>
       </div>
     </div>
-    <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
-            <div class="panel-body">
-              <p contenteditable="true">How are you doing today? type it here...</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="col-sm-6">
       <div class = "row">
         <div class="col-sm-12">
           <div class="well">

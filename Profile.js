@@ -25,3 +25,9 @@ function signIn() {
 	var message = "Email: " + userName;
 	document.getElementById("email").innerHTML = message;
 }
+
+function setSchool() {
+	var schoolID = prompt("Please enter your school's ID");
+	var message = "School: Brearley";
+	document.getElementById("school").innerHTML = message;
+}
